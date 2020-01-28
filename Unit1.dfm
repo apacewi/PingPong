@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 248
-  Top = 210
+  Left = 259
+  Top = 185
   Width = 1044
   Height = 532
   Caption = 'Form1'
@@ -11,6 +11,8 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
   PixelsPerInch = 96
   TextHeight = 13
   object backg: TShape
@@ -522,5 +524,33 @@ object Form1: TForm1
       1E17291E17291E17291E17291E17291E17291E17291EFFFFFF17291E17291E17
       291E17291E17291E17291E17291E17291E17291E17291E17291E17291E17291E
       17291E17291E17291E17291E17291EFFFFFF}
+  end
+  object timerPal1: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = timerPal1Timer
+    Left = 16
+    Top = 8
+  end
+  object secondTimerPal1: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = secondTimerPal1Timer
+    Left = 56
+    Top = 8
+  end
+  object secondTimerPal2: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = secondTimerPal2Timer
+    Left = 984
+    Top = 8
+  end
+  object timerPal2: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = timerPal2Timer
+    Left = 936
+    Top = 8
   end
 end
