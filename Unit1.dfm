@@ -1,10 +1,11 @@
 object Form1: TForm1
-  Left = 259
-  Top = 185
-  Width = 1044
-  Height = 532
+  Left = 197
+  Top = 145
+  Width = 1087
+  Height = 567
   Caption = 'Form1'
   Color = clBtnFace
+  UseDockManager = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -13,19 +14,22 @@ object Form1: TForm1
   OldCreateOrder = False
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
+  DesignSize = (
+    1071
+    528)
   PixelsPerInch = 96
   TextHeight = 13
   object backg: TShape
     Left = 0
     Top = 0
-    Width = 1028
-    Height = 493
+    Width = 1071
+    Height = 528
     Align = alClient
     Brush.Color = clGreen
   end
   object ball: TImage
-    Left = 136
-    Top = 136
+    Left = 128
+    Top = 328
     Width = 32
     Height = 32
     AutoSize = True
@@ -132,10 +136,13 @@ object Form1: TForm1
     Transparent = True
   end
   object pal2: TImage
-    Left = 1000
-    Top = 208
+    Left = 1040
+    Top = 334
     Width = 20
     Height = 100
+    Cursor = crDrag
+    Anchors = [akLeft, akRight]
+    AutoSize = True
     Picture.Data = {
       07544269746D6170A6170000424DA61700000000000036000000280000001400
       000064000000010018000000000070170000230B0000230B0000000000000000
@@ -327,12 +334,14 @@ object Form1: TForm1
       1E17291E17291E17291E17291E17291E17291E17291EFFFFFF17291E17291E17
       291E17291E17291E17291E17291E17291E17291E17291E17291E17291E17291E
       17291E17291E17291E17291E17291EFFFFFF}
+    Proportional = True
   end
   object pal1: TImage
     Left = 8
-    Top = 192
+    Top = 144
     Width = 20
     Height = 100
+    AutoSize = True
     Picture.Data = {
       07544269746D6170A6170000424DA61700000000000036000000280000001400
       000064000000010018000000000070170000230B0000230B0000000000000000
@@ -527,30 +536,36 @@ object Form1: TForm1
   end
   object timerPal1: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 10
     OnTimer = timerPal1Timer
-    Left = 16
+    Left = 64
     Top = 8
   end
   object secondTimerPal1: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 10
     OnTimer = secondTimerPal1Timer
-    Left = 56
+    Left = 96
     Top = 8
   end
   object secondTimerPal2: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 10
     OnTimer = secondTimerPal2Timer
     Left = 984
     Top = 8
   end
   object timerPal2: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 10
     OnTimer = timerPal2Timer
     Left = 936
+    Top = 8
+  end
+  object ballTimer: TTimer
+    Interval = 20
+    OnTimer = ballTimerTimer
+    Left = 480
     Top = 8
   end
 end

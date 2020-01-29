@@ -13,7 +13,6 @@
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
-        TShape *backg;
         TImage *ball;
         TImage *pal2;
         TImage *pal1;
@@ -21,6 +20,8 @@ __published:	// IDE-managed Components
         TTimer *secondTimerPal1;
         TTimer *secondTimerPal2;
         TTimer *timerPal2;
+        TTimer *ballTimer;
+        TShape *backg;
         void __fastcall timerPal1Timer(TObject *Sender);
         void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
@@ -29,6 +30,7 @@ __published:	// IDE-managed Components
           TShiftState Shift);
         void __fastcall timerPal2Timer(TObject *Sender);
         void __fastcall secondTimerPal2Timer(TObject *Sender);
+        void __fastcall ballTimerTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
