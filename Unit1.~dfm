@@ -1,35 +1,38 @@
 object Form1: TForm1
-  Left = 273
-  Top = 142
-  Width = 1087
-  Height = 571
+  Left = 289
+  Top = 201
+  Width = 1088
+  Height = 507
   Caption = 'Form1'
   Color = clBtnFace
   UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   DesignSize = (
-    1071
-    532)
+    1072
+    468)
   PixelsPerInch = 96
   TextHeight = 13
   object backg: TShape
     Left = 0
     Top = 0
-    Width = 1071
-    Height = 532
+    Width = 1072
+    Height = 468
     Align = alClient
     Brush.Color = clGreen
   end
   object ball: TImage
-    Left = 560
-    Top = 120
+    Left = 128
+    Top = 328
     Width = 32
     Height = 32
     AutoSize = True
@@ -137,7 +140,7 @@ object Form1: TForm1
   end
   object pal2: TImage
     Left = 1040
-    Top = 192
+    Top = 290
     Width = 20
     Height = 100
     Cursor = crDrag
@@ -338,10 +341,11 @@ object Form1: TForm1
   end
   object pal1: TImage
     Left = 8
-    Top = 192
+    Top = 144
     Width = 20
     Height = 100
     AutoSize = True
+    Enabled = False
     Picture.Data = {
       07544269746D6170A6170000424DA61700000000000036000000280000001400
       000064000000010018000000000070170000230B0000230B0000000000000000
@@ -534,18 +538,73 @@ object Form1: TForm1
       291E17291E17291E17291E17291E17291E17291E17291E17291E17291E17291E
       17291E17291E17291E17291E17291EFFFFFF}
   end
+  object Button1: TButton
+    Left = 376
+    Top = 176
+    Width = 257
+    Height = 57
+    Caption = 'Nast'#281'pna rozgrywka >> '
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clHotLight
+    Font.Height = -15
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    Visible = False
+    OnClick = Button1Click
+  end
+  object uderzenia: TButton
+    Left = 376
+    Top = 64
+    Width = 257
+    Height = 49
+    Caption = 'Liczba uderzen :'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clBlue
+    Font.Height = -15
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+  end
+  object Button2: TButton
+    Left = 376
+    Top = 120
+    Width = 257
+    Height = 49
+    Caption = 'Button2'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    Visible = False
+  end
+  object dzwiek: TMediaPlayer
+    Left = 368
+    Top = 400
+    Width = 253
+    Height = 30
+    FileName = 'C:\Users\arkad\Desktop\projektycpp\PINGPONG\Voices\pingpong.mp3'
+    Visible = False
+    TabOrder = 3
+  end
   object timerPal1: TTimer
     Enabled = False
     Interval = 10
     OnTimer = timerPal1Timer
-    Left = 16
+    Left = 64
     Top = 8
   end
   object secondTimerPal1: TTimer
     Enabled = False
     Interval = 10
     OnTimer = secondTimerPal1Timer
-    Left = 56
+    Left = 96
     Top = 8
   end
   object secondTimerPal2: TTimer
@@ -563,7 +622,7 @@ object Form1: TForm1
     Top = 8
   end
   object ballTimer: TTimer
-    Interval = 30
+    Interval = 20
     OnTimer = ballTimerTimer
     Left = 480
     Top = 8

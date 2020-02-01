@@ -9,6 +9,7 @@
 #pragma resource "*.dfm"
 
  int x = -8, y = -8;
+ int liczbaUderzen = 0;
 
 TForm1 *Form1;
 //---------------------------------------------------------------------------
@@ -58,12 +59,81 @@ void __fastcall TForm1::secondTimerPal2Timer(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ballTimerTimer(TObject *Sender)
 {
-        ball -> Left += x;
-        ball -> Top += y;
-        if (ball -> Top <= backg -> Top) y = -y;
-        if (ball -> Top + ball -> Height >= backg -> Height) y = -y;
-        if (ball -> Left + ball -> Height/2 == pal1 -> Left + pal1 -> Width) x = -x;
-        //if (pal1 -> Right == ball -> Left + ball -> Height/2  && (pal1 -> Top <= ball -> Top + ball -> Height/2 ) && (pal1 -> Top + pal1 -> Height >= ball -> Top + ball -> Height/2)) x = -x;
-        if (ball -> Left + ball -> Width >= backg -> Left+ backg -> Width) x=-x;
+       ball -> Left += x;
+       ball -> Top += y;
+
+       if (ball -> Top <= backg -> Top) y = -y;
+       if (ball -> Top + ball -> Height >= backg -> Height) y = -y;
+       if ((ball -> Left + ball -> Width < pal1 -> Left) || (ball -> Left + ball -> Width/2 > pal2 -> Left + 10))
+       {
+        ballTimer -> Enabled = false;
+        ball -> Visible = false;
+        Button1 -> Visible = true;
+        uderzenia -> Caption = " Liczba uderzen: " + IntToStr(liczbaUderzen);
+        uderzenia -> Visible = true;
+        if (x < 0) x = -x;
+        Button2 -> Caption = " Predkosc pilki: " + IntToStr(x);
+        Button2 -> Visible = true;
+       }
+       else if ((ball -> Left + ball -> Width > pal2 -> Left) && (pal2 -> Top < ball -> Top + ball -> Height/2) && (pal2 -> Top + pal2 -> Height > ball -> Top + ball -> Height/2) )
+        {
+        if (x >= 30){
+              //  dzwiek -> Play();
+                x = -x;
+                liczbaUderzen++;
+                }
+        else if (x < 30)
+                {
+                    //    dzwiek -> Play();
+                        x = -x - 2;
+                        liczbaUderzen++;
+                }
+        }    // prawa paletka x -
+
+       else if ((pal1 -> Left + pal1 -> Width >= ball -> Left) && (pal1 -> Top <= ball -> Top + ball -> Height/2) && (pal1 -> Top + pal1 -> Height >= ball -> Top + ball -> Height/2) )
+       {
+       if (x <= -30){
+              //  dzwiek -> Play();
+                x = -x;
+                liczbaUderzen++;
+                }
+        else if (x > -30)
+                {
+                     //   dzwiek -> Play();
+                        x = -x + 2;
+                        liczbaUderzen++;
+                }
+       }    // lewa paletka x +
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+        liczbaUderzen = 0;
+        Button2 -> Visible = false;
+        Button1 -> Visible = false;
+        uderzenia -> Visible = false;
+        ball -> Visible = true;
+        ball -> Left = backg -> Width/2;
+        ball -> Top = backg -> Height/2;
+        if ( x > 0)
+        x = -8;
+        else
+        x = 8;
+        y = -8;
+        ballTimer -> Enabled = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+dzwiek -> FileName = "Voices/pingpongv3.mp3";
+dzwiek -> Open();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+dzwiek -> Close();
+}
+//---------------------------------------------------------------------------
+

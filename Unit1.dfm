@@ -1,35 +1,38 @@
 object Form1: TForm1
-  Left = 197
-  Top = 145
-  Width = 1087
-  Height = 567
+  Left = 289
+  Top = 201
+  Width = 1088
+  Height = 507
   Caption = 'Form1'
   Color = clBtnFace
   UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   DesignSize = (
-    1071
-    528)
+    1072
+    468)
   PixelsPerInch = 96
   TextHeight = 13
   object backg: TShape
     Left = 0
     Top = 0
-    Width = 1071
-    Height = 528
+    Width = 1072
+    Height = 468
     Align = alClient
     Brush.Color = clGreen
   end
   object ball: TImage
-    Left = 128
-    Top = 328
+    Left = 480
+    Top = 184
     Width = 32
     Height = 32
     AutoSize = True
@@ -137,7 +140,7 @@ object Form1: TForm1
   end
   object pal2: TImage
     Left = 1040
-    Top = 334
+    Top = 290
     Width = 20
     Height = 100
     Cursor = crDrag
@@ -342,6 +345,7 @@ object Form1: TForm1
     Width = 20
     Height = 100
     AutoSize = True
+    Enabled = False
     Picture.Data = {
       07544269746D6170A6170000424DA61700000000000036000000280000001400
       000064000000010018000000000070170000230B0000230B0000000000000000
@@ -534,6 +538,191 @@ object Form1: TForm1
       291E17291E17291E17291E17291E17291E17291E17291E17291E17291E17291E
       17291E17291E17291E17291E17291EFFFFFF}
   end
+  object Button4: TLabel
+    Left = 320
+    Top = 59
+    Width = 369
+    Height = 49
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Punkt dla gracza prawego! '
+    Color = clBtnShadow
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clRed
+    Font.Height = -19
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Layout = tlCenter
+    Visible = False
+  end
+  object uderzenia: TLabel
+    Left = 240
+    Top = 120
+    Width = 257
+    Height = 49
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Liczba uderzen :'
+    Color = clMedGray
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clMenuHighlight
+    Font.Height = -15
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Layout = tlCenter
+    Visible = False
+  end
+  object Button2: TLabel
+    Left = 528
+    Top = 120
+    Width = 257
+    Height = 49
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Button2'
+    Color = clMedGray
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clMenuHighlight
+    Font.Height = -15
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Layout = tlCenter
+    Visible = False
+  end
+  object Label1: TLabel
+    Left = 224
+    Top = 16
+    Width = 591
+    Height = 97
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Witaj w grze Ping-Pong, baw sie dobrze! '
+    Color = clSilver
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clYellow
+    Font.Height = -27
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Layout = tlCenter
+  end
+  object Label2: TLabel
+    Left = 384
+    Top = 176
+    Width = 257
+    Height = 49
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Label2'
+    Color = clMedGray
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clYellow
+    Font.Height = -16
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold, fsUnderline]
+    ParentColor = False
+    ParentFont = False
+    Layout = tlCenter
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 384
+    Top = 232
+    Width = 257
+    Height = 57
+    Cursor = crHandPoint
+    Caption = 'Nast'#281'pna rozgrywka >> '
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clHotLight
+    Font.Height = -15
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    Visible = False
+    OnClick = Button1Click
+  end
+  object dzwiek: TMediaPlayer
+    Left = 368
+    Top = 400
+    Width = 253
+    Height = 30
+    FileName = 'C:\Users\arkad\Desktop\projektycpp\PINGPONG\Voices\pingpong.mp3'
+    Visible = False
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 336
+    Top = 296
+    Width = 345
+    Height = 65
+    Cursor = crHandPoint
+    Caption = 'Nowa Gra >>'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -23
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    OnClick = Button3Click
+  end
+  object Button5: TButton
+    Left = 384
+    Top = 296
+    Width = 257
+    Height = 57
+    Cursor = crHandPoint
+    Caption = 'Mecz od nowa >>'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+    Visible = False
+    OnClick = Button5Click
+  end
+  object Button6: TButton
+    Left = 40
+    Top = 200
+    Width = 313
+    Height = 81
+    Caption = 'Tryb treningowy (jednoosobowy)'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+    Visible = False
+    OnClick = Button6Click
+  end
+  object Button7: TButton
+    Left = 664
+    Top = 200
+    Width = 313
+    Height = 81
+    Caption = 'Tryb dwuosobowy'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Yu Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 5
+    Visible = False
+    OnClick = Button7Click
+  end
   object timerPal1: TTimer
     Enabled = False
     Interval = 10
@@ -563,6 +752,7 @@ object Form1: TForm1
     Top = 8
   end
   object ballTimer: TTimer
+    Enabled = False
     Interval = 20
     OnTimer = ballTimerTimer
     Left = 480
