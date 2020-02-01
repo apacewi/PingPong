@@ -2,6 +2,7 @@
 
 #include <vcl.h>
 #pragma hdrstop
+#include "mmsystem.h"
 
 #include "Unit1.h"
 //---------------------------------------------------------------------------
@@ -93,12 +94,14 @@ void __fastcall TForm1::ballTimerTimer(TObject *Sender)
                         {
                         if (x >= 30){
                         //  dzwiek -> Play();
+                        sndPlaySound("Voices/pingpongfinal.wav" , SND_ASYNC);
                          x = -x;
                                 liczbaUderzen++;
                                 }
                                 else if (x < 30)
                                 {
                                 //    dzwiek -> Play();
+                                sndPlaySound("Voices/pingpongfinal.wav" , SND_ASYNC);
                                         x = -x - 2;
                                         liczbaUderzen++;
                                         }
@@ -108,12 +111,14 @@ void __fastcall TForm1::ballTimerTimer(TObject *Sender)
                         {
                         if (x <= -30){
                                 //  dzwiek -> Play();
+                                sndPlaySound("Voices/pingpongfinal.wav" , SND_ASYNC);
                                 x = -x;
                                 liczbaUderzen++;
                                 }
                                 else if (x > -30)
                                 {
                                          //   dzwiek -> Play();
+                                         sndPlaySound("Voices/pingpongfinal.wav" , SND_ASYNC);
                                         x = -x + 2;
                                         liczbaUderzen++;
                                 }
@@ -139,12 +144,14 @@ void __fastcall TForm1::ballTimerTimer(TObject *Sender)
                         {
                         if (x >= 30){
                         //  dzwiek -> Play();
+                        sndPlaySound("Voices/pingpongfinal.wav" , SND_ASYNC);
                          x = -x;
                                 liczbaUderzen++;
                                 }
                                 else if (x < 30)
                                 {
                                 //    dzwiek -> Play();
+                                sndPlaySound("Voices/pingpongfinal.wav" , SND_ASYNC);
                                         x = -x - 2;
                                         liczbaUderzen++;
                                         }
@@ -177,6 +184,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 dzwiek -> FileName = "Voices/pingpongv3.mp3";
+
 dzwiek -> Open();
 }
 //---------------------------------------------------------------------------
