@@ -1,9 +1,9 @@
 object Form1: TForm1
-  Left = -180
-  Top = 205
+  Left = 236
+  Top = 139
   Width = 1088
-  Height = 507
-  Caption = 'Message Boxes Configuration'
+  Height = 504
+  Caption = 'PingPong'
   Color = clBtnFace
   UseDockManager = True
   DockSite = True
@@ -19,14 +19,14 @@ object Form1: TForm1
   OnKeyUp = FormKeyUp
   DesignSize = (
     1072
-    468)
+    465)
   PixelsPerInch = 96
   TextHeight = 13
   object backg: TShape
     Left = 0
     Top = 0
     Width = 1072
-    Height = 468
+    Height = 465
     Align = alClient
     Brush.Color = clGreen
   end
@@ -140,7 +140,7 @@ object Form1: TForm1
   end
   object pal2: TImage
     Left = 1040
-    Top = 290
+    Top = 288
     Width = 20
     Height = 100
     Cursor = crDrag

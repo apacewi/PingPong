@@ -34,6 +34,7 @@ __published:	// IDE-managed Components
         TButton *Button5;
         TButton *Button6;
         TButton *Button7;
+        TEdit *edtMessage;
         void __fastcall timerPal1Timer(TObject *Sender);
         void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
@@ -50,6 +51,7 @@ __published:	// IDE-managed Components
         void __fastcall Button5Click(TObject *Sender);
         void __fastcall Button7Click(TObject *Sender);
         void __fastcall Button6Click(TObject *Sender);
+        void __fastcall edtMessageChange(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);

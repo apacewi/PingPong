@@ -17,6 +17,13 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
 {
+        AnsiString welcome = "Witaj w grze PingPong. ";
+	AnsiString configuration = "Lewy gracz steruje przyciskami 'A', 'Z' ";
+	AnsiString configuration2 = "natomiast prawy strza³k¹ do góry i do dolu. ";
+	AnsiString strFinal = "Mi³ej zabawy! :) ";
+
+	ShowMessage(welcome + sLineBreak + configuration + sLineBreak +
+			configuration2 + sLineBreak + strFinal);
 }
 //---------------------------------------------------------------------------
 
@@ -247,6 +254,18 @@ void __fastcall TForm1::Button6Click(TObject *Sender)
         trybGry = 2;
         Label1 -> Visible = false;
         ballTimer -> Enabled = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::edtMessageChange(TObject *Sender)
+{
+        AnsiString welcome = "Witaj w grze PingPong. ";
+	AnsiString configuration = "Lewy gracz steruje przyciskami 'A', 'Z' ";
+	AnsiString configuration2 = "natomiast prawy strza³k¹ do góry i do dolu. ";
+	AnsiString strFinal = "Mi³ej zabawy! :) ";
+
+	ShowMessage(welcome + sLineBreak + configuration + sLineBreak +
+			configuration2 + sLineBreak + strFinal);
 }
 //---------------------------------------------------------------------------
 

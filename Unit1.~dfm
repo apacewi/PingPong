@@ -1,9 +1,9 @@
 object Form1: TForm1
-  Left = 565
-  Top = 202
+  Left = -180
+  Top = 205
   Width = 1088
   Height = 507
-  Caption = 'Form1'
+  Caption = 'Message Boxes Configuration'
   Color = clBtnFace
   UseDockManager = True
   DockSite = True
@@ -722,6 +722,15 @@ object Form1: TForm1
     TabOrder = 5
     Visible = False
     OnClick = Button7Click
+  end
+  object edtMessage: TEdit
+    Left = 16
+    Top = 56
+    Width = 121
+    Height = 21
+    TabOrder = 6
+    Visible = False
+    OnChange = edtMessageChange
   end
   object timerPal1: TTimer
     Enabled = False
