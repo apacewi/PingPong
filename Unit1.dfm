@@ -596,8 +596,8 @@ object Form1: TForm1
     Visible = False
   end
   object Label1: TLabel
-    Left = 224
-    Top = 16
+    Left = 216
+    Top = 24
     Width = 591
     Height = 97
     Alignment = taCenter
